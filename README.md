@@ -1,7 +1,7 @@
-# Hipster Shop: Cloud-Native Microservices Demo Application
+# Fazio Shop: Cloud-Native Microservices Demo Application
 
 This project contains a 10-tier microservices application. The application is a
-web-based e-commerce app called **“Hipster Shop”** where users can browse items,
+web-based e-commerce app called **“Fazio Shop”** where users can browse items,
 add them to the cart, and purchase them.
 
 **Google uses this application to demonstrate Kubernetes, GKE, Istio,
@@ -11,11 +11,11 @@ Stackdriver, gRPC** and similar cloud-native technologies nowadays.
 
 | Home Page | Checkout Screen |
 |-----------|-----------------|
-| [![Screenshot of store homepage](./img/hipster-shop-frontend-1.png)](./img/hipster-shop-frontend-1.png) | [![Screenshot of checkout screen](./img/hipster-shop-frontend-2.png)](./img/hipster-shop-frontend-2.png) |
+| [![Screenshot of store homepage](./img/fazio-shop-frontend-1.png)](./img/hipster-shop-frontend-1.png) | [![Screenshot of checkout screen](./img/hipster-shop-frontend-2.png)](./img/hipster-shop-frontend-2.png) |
 
 ## Service Architecture
 
-**Hipster Shop** is composed of many microservices written in different
+**Fazio Shop** is composed of many microservices written in different
 languages that talk to each other over gRPC.
 
 [![Architecture of
