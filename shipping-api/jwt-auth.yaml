@@ -8,6 +8,6 @@ spec:
   - name: shipping
   origins:
   - jwt:
-      issuer: https://amer-demo13-test.apigee.net/istio-auth/token
-      jwks_uri: https://amer-demo13-test.apigee.net/istio-auth/certs
+      issuer: https://theganyodemo-eval-test.apigee.net/istio-auth/token
+      jwks_uri: https://theganyodemo-eval-test.apigee.net/istio-auth/certs
   principalBinding: USE_ORIGIN

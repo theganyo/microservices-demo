@@ -1,0 +1,95 @@
+openapi: "3.0.0"
+info:
+  version: 1.0.0
+  title: Fazio Shipping Details
+  license:
+    name: MIT
+servers:
+- url: https://35.225.154.183
+security:
+- api_key: []
+- jwt_bearer: []
+paths:
+  /tracking/{trackingNumber}:
+    get:
+      summary: Retrieve tracking info for the specified tracking number
+      description: Retrieve tracking info for the specified tracking number
+      operationId: showTrackingByID
+      tags:
+      - tracking
+      parameters:
+      - name: trackingNumber
+        in: path
+        required: true
+        description: The id of the tracking information to retrieve
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Expected response to a valid request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TrackingInfo"
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+# https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.1.md#components-object
+components:
+  schemas:
+    Location:
+      properties:
+        city:
+          type: string
+        country:
+          type: string
+        state:
+          type: string
+        zip:
+          type: string
+    TrackingInfo:
+      properties:
+        status:
+          type: integer
+          format: int64
+        updated:
+          type: string
+        trackingLocation:
+          $ref: "#/components/schemas/Location"
+        id:
+          type: string
+        weight:
+          type: string
+        created:
+          type: string
+        tracking_code:
+          type: string
+        carrier:
+          type: string
+        estimated_delivery_date:
+          type: string
+        signed:
+          type: string
+    Error:
+      required:
+      - code
+      - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+  #  https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.1.md#securitySchemeObject
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+    jwt_bearer:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
