@@ -10,3 +10,4 @@ pkg/
 .idea
 .skaffold-*.yaml
 .kubernetes-manifests-*/
+jupyter-notebooks/.ipynb_checkpoints
